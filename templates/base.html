@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chatbot</title>
+
+  <link rel="stylesheet" href="/home/venum/fontaws/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="fontaws/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-Il4irG0aTiMn/LUAdY9U6QdS6gozUjwMFZPvzlj4L4J1trpLoGkgH59Yj9XSY+mDzq3f3SSQ23rhLMBlj+l1Rg=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="../static/css/base.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="left-panel-up">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="kirinyaga">
+      </div>
+      <div class="left-panel-bottom">
+
+
+        <button id="light-mode" class="btn" onclick={luminous()}>
+          Light Mode
+        </button>
+        <button id="clear-button" class="btn" onclick={clearchats()}>Clear Conversations</button>
+        <button id="back" class="btn" onclick="goToHomi()">Back</button>
+
+
+      </div>
+
+    </div>
+    <div class="right-panel">
+      <div id="chatbox">
+
+        <div id="chatbox-header">
+          <img src="../static/images/kyubot.jpg" width="50px">
+          <h4>KyuBot</h4>
+        </div>
+        <div id="chatbox-body"></div>
+        <div id="chatbox-input">
+
+          <input type="text" id="message" placeholder="Type your message here...">
+          <span id="plane-icon"><ion-icon name="send"></ion-icon></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+
+    function goToHomi() {
+      window.location.href = "/";
+    }
+
+    var chatboxBody = document.getElementById('chatbox-body');
+    var messageInput = document.getElementById('message');
+    var sendButton = document.getElementById('plane-icon');
+
+    //change lightmode
+    function luminous() {
+      var chatboxBody = document.getElementById('chatbox-body');
+      var leftPanelBottom = document.querySelector('.left-panel-bottom'); // Get the left panel bottom section
+      var chatbox = document.getElementById('chatbox'); // Get the chatbox element
+      var input = document.getElementById('message'); // Get the input element
+      var buttons = document.querySelectorAll('.btn'); // Get all buttons
+      var chatboxInput = document.querySelector('chatbox-input'); // Get the chatbox input element
+
+      chatboxBody.classList.toggle('lightmode');
+      leftPanelBottom.classList.toggle('lightmode-panel'); // Toggle light mode class for left panel bottom
+      chatbox.classList.toggle('lightmode'); // Toggle light mode class for chatbox
+      input.classList.toggle('lightmode-input'); // Toggle light mode class for input
+      
+
+      buttons.forEach(function (button) {
+        button.classList.toggle('lightmode-button'); // Toggle light mode class for all buttons
+        if (button.textContent.trim() === 'Light Mode') {
+          button.textContent = 'Dark Mode';
+        } else if (button.textContent.trim() === 'Dark Mode') {
+          button.textContent = 'Light Mode';
+        }
+      });
+    }
+
+
+    // Send a message to the chatbot
+    function sendMessage() {
+      var message = messageInput.value;
+      if (message.trim() == '') {
+        return;
+      }
+
+      // Create a new message element for the user's message
+      var userMessage = document.createElement('div');
+      userMessage.classList.add('message', 'user-message'); // Add the "user-message" class
+      userMessage.innerHTML = '<div><strong>You:</strong> ' + message + '</div>';
+      chatboxBody.appendChild(userMessage);
+      messageInput.value = '';
+
+      // Send the message to the chatbot and display the response
+      fetch('/get', {
+        method: 'POST',
+        body: new URLSearchParams({
+          message: message
+        })
+      })
+        .then(response => response.text())
+        .then(data => {
+          console.log("response", data)
+          // Create a new message element for the chatbot's response
+          var chatbotMessage = document.createElement('div');
+          chatbotMessage.classList.add('message', 'chatbot-message'); 
+          var chatbotText = document.createElement('div');
+          chatbotText.innerHTML = '<strong>KyuBot:</strong> ';
+          chatbotMessage.appendChild(chatbotText);
+          chatboxBody.appendChild(chatbotMessage);
+
+          // Typing simulation
+          var i = 0;
+          var responseInterval = setInterval(function () {
+            if (i < data.length) {
+              chatbotText.innerHTML += data.charAt(i);
+              i++;
+            } else {
+              clearInterval(responseInterval);
+              chatboxBody.scrollTop = chatboxBody.scrollHeight;
+            }
+
+
+          }, 50);
+        })
+        .catch(error => console.error(error));
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keyup', function (event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+
+    function clearchats() {
+      var chatboxbody = document.getElementById('chatbox-body');
+      while (chatboxbody.firstChild) {
+        chatboxbody.removeChild(chatboxbody.firstChild);
+      }
+    }
+  </script>
+</body>
+
+</html>
